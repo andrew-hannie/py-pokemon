@@ -1,5 +1,8 @@
 from pkmn_project import Pokemon
 import os
+
+# Use this file to send inputs to the pokemon project class
+
 def readFile(fileName):
     newFile = open(fileName, "r")
     monList = []

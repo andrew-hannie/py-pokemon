@@ -1,0 +1,103 @@
+Lapras-Gmax (Ice & Water)
+---------------------------------------------------------------------------
+        Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+          Fire                     Fire                                    
+        Fighting                   Water                                   
+          Rock                     Steel                                   
+          Steel                 Ice (1/4x)                                 
+        Electric                                                           
+
+Alakazam (Psychic)
+---------------------------------------------------------------------------
+       Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+           Bug                   Fighting                                  
+          Ghost                   Psychic                                  
+
+Chandelure (Ghost & Fire)
+---------------------------------------------------------------------------
+        Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+          Ghost                   Poison                  Fighting         
+          Dark                     Fire                    Normal          
+          Water                    Grass                                   
+         Ground                     Ice                                    
+          Rock                     Steel                                   
+                                   Fairy                                   
+
+Lucario (Fighting & Steel)
+---------------------------------------------------------------------------
+        Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+         Flying                    Dark                    Poison          
+         Psychic                  Normal                                   
+          Fairy                    Grass                                   
+          Fire                      Ice                                    
+        Fighting                  Flying                                   
+                                  Psychic                                  
+                                  Dragon                                   
+                                   Steel                                   
+                                   Fairy                                   
+                                Bug (1/4x)                                 
+
+Espeon (Psychic)
+---------------------------------------------------------------------------
+       Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+           Bug                   Fighting                                  
+          Ghost                   Psychic                                  
+
+Leafeon (Grass)
+---------------------------------------------------------------------------
+       Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+          Fire                     Water                                   
+           Ice                   Electric                                  
+         Poison                    Grass                                   
+         Flying                   Ground                                   
+
+Charmeleon (Fire)
+---------------------------------------------------------------------------
+       Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+          Water                    Fire                                    
+         Ground                    Grass                                   
+          Rock                      Ice                                    
+                                    Bug                                    
+                                   Steel                                   
+
+Indeedee-Female (Normal & Psychic)
+---------------------------------------------------------------------------
+        Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+        Fighting                 Fighting                   Ghost          
+           Bug                    Psychic                                  
+
+Ninetales-Alola (Fairy & Ice)
+---------------------------------------------------------------------------
+        Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+         Poison                  Fighting                  Dragon          
+          Fire                      Bug                                    
+        Fighting                   Dark                                    
+          Rock                      Ice                                    
+
+Marowack (Ground)
+---------------------------------------------------------------------------
+       Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+          Water                   Poison                  Electric         
+          Grass                    Rock                                    
+
+Solrock (Rock & Psychic)
+---------------------------------------------------------------------------
+        Weaknesses               Resistances              Immunities        
+---------------------------------------------------------------------------
+          Water                   Normal                   Ground          
+          Grass                    Fire                                    
+        Fighting                  Poison                                   
+          Steel                   Flying                                   
+           Bug                   Fighting                                  
+          Ghost                   Psychic                                  
+

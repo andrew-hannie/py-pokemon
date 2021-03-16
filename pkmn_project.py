@@ -8,9 +8,9 @@ class Pokemon:
         if type2 is not None:
             type2 = type2.lower()
             types.append(type2)
-        if levitate is not False:
+        if levitate is not False: # Check and see if each pokemon has levitate
             immunity.append("ground")
-        weaknesses = {
+        weaknesses = { # all of the weaknesses of each pokemon type
             "normal" : ["fighting"],
             "fire" : ["water", "ground", "rock",],
             "water" : ["electric", "grass"],
@@ -30,7 +30,7 @@ class Pokemon:
             "steel" : ["fire", "fighting"],
             "fairy" : ["poison", "steel"]
         }
-        resistances = {
+        resistances = { # all of the resistances of each pokemon type
             "normal" : [],
             "fire" : ["fire", "grass", "ice", "bug", "steel", "fairy"],
             "water" : ["fire", "water", "ice", "steel"],
@@ -161,5 +161,5 @@ class Pokemon:
 
             retString += "\n"
         return retString
-    def __lt__(self, other):
+    def __lt__(self, other): # for sorting
         return self.name < other.name
