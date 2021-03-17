@@ -1,5 +1,5 @@
 class Pokemon:
-    def __init__(self, name, type1, type2=None, levitate=False):
+    def __init__(self, name, type1, type2=None, ability=None):
         type1 = type1.lower()
         supereffective = []
         notvery = []
@@ -8,8 +8,6 @@ class Pokemon:
         if type2 is not None:
             type2 = type2.lower()
             types.append(type2)
-        if levitate is not False: # Check and see if each pokemon has levitate
-            immunity.append("ground")
         weaknesses = { # all of the weaknesses of each pokemon type
             "normal" : ["fighting"],
             "fire" : ["water", "ground", "rock",],
@@ -59,6 +57,7 @@ class Pokemon:
             "steel" : ["poison"],
             "fairy" : ["dragon"]
         }
+
         for i in types:
             w = weaknesses.get(i)
             r = resistances.get(i)
@@ -73,6 +72,31 @@ class Pokemon:
                 raise TypeError("Not a valid Pokemon Type given.")
             if n is not None:
                 immunity.extend(n)
+        if ability is not None: # checks and sees if there is an ability that we need to worry about
+            ability = ability.lower()
+            abilities = {
+                "levitate" : "ground",
+                "lightning rod" : "electric",
+                "dry skin" : "water",
+                "motor drive" : "electric",
+                "sap sipper" : "grass",
+                "flash fire" : "fire",
+                "volt absorb" : "electric",
+                "water absorb" : "water",
+            }
+            for i in abilities:
+                if i == ability:
+                    immunity.append(abilities.get(i))
+            if ability == "wonder guard":
+                # we want to compare every move type to see if it is
+                # super effective, and if it isn't, add it to the immunities list.
+                notvery = []
+                alltypes = list(resistances.keys())
+                for i in alltypes:
+                    for j in supereffective:
+                        if i == j:
+                            alltypes.remove(i)
+                immunity.extend(alltypes)
         for i in notvery:
             count = 0
             for j in notvery:
@@ -95,7 +119,14 @@ class Pokemon:
                     supereffective.remove(j)
                     supereffective.append(temp)
                     break
-
+        for i in immunity:
+            count = 0
+            for j in immunity:
+                if i == j:
+                    count += 1
+                if count == 2:
+                    immunity.remove(i)
+                    break
         for i in immunity:
             for j in notvery:
                 if i == j:
@@ -105,6 +136,18 @@ class Pokemon:
                     supereffective.remove(j)
         self.name = name
         self.type1 = type1[0].upper() + type1[1:]
+        if ability is not None:
+            ability = ability.split(" ")
+            fixed_ability = ""
+            for i in ability:
+                if i == ability[len(ability) - 1]:
+                    fixed_ability += i[0].upper() + i[1:]
+                else:
+                    fixed_ability += i[0].upper() + i[1:] + " "
+            ability = fixed_ability
+            self.ability = ability
+        else:
+            self.ability = None
         if type2 is not None:
             self.type2 = type2[0].upper() + type2[1:]
         else:
@@ -121,26 +164,20 @@ class Pokemon:
         retString = ""
         dashes = ["-" for i in range(0, 75)]
         dashes = "".join(dashes)
-        s_length = len(self.supereffective)
-        r_length = len(self.resistances)
-        i_length = len(self.immunities)
-        length = 0
-        if s_length >= r_length:
-            length = s_length
-        elif r_length >= i_length:
-            length = r_length
-        else:
-            length = i_length
-        if length == 1:
-            length += 1
-
+        length = max(len(self.immunities), len(self.resistances), len(self.supereffective))
         if self.type2 == None:
-            retString += "{:} ({:})\n".format(self.name, self.type1)
+            if self.ability is not None:
+                retString += "{:} ({:}) [{:}]\n".format(self.name, self.type1, self.ability)
+            else:
+                retString += "{:} ({:}) \n".format(self.name, self.type1)
             retString += dashes
             retString += "\n"
             retString += "{:^25}{:^25}{:^25}\n".format("Weaknesses", "Resistances", "Immunities")
         else:
-            retString += "{:} ({:} & {:})\n".format(self.name, self.type1, self.type2)
+            if self.ability is not None:
+                retString += "{:} ({:} & {:}) [{:}]\n".format(self.name, self.type1, self.type2, self.ability)
+            else:
+                retString += "{:} ({:} & {:})\n".format(self.name, self.type1, self.type2)                               
             retString += dashes
             retString += "\n"
             retString += " {:^25}{:^25}{:^25}\n".format("Weaknesses", "Resistances", "Immunities")

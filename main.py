@@ -10,6 +10,8 @@ def readFile(fileName):
         if i[-1:] == "\n":
             i = i[:-1]
         splitStr = i.split(',')
+        while '' in splitStr:
+            splitStr.remove('')
         if len(splitStr) == 4:
             newMon = Pokemon(splitStr[0], splitStr[1], splitStr[2], bool(splitStr[3]))
             monList.append(newMon)
@@ -34,6 +36,7 @@ def main():
         
         output.write(str(i))
         output.write("\n")
+    output.close()
     print("File saved at", os.path.realpath(output.name))
     input()
 
